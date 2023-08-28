@@ -1,0 +1,53 @@
+Стрес-тестування API JSONPlaceholder
+
+Тестовий план
+
+Визначення мінімальних комбінацій параметрів, за яких вебсервіс перестає витримувати навантаження.
+
+1.
+Number of Threads (users) - 10
+Ramp-up period (seconds) - 5
+Loop Count - 1
+
+Один із запитів GET не пройшов перевірку за тривалістю відповіді, яка у вимогах була встановлена не бильше ніж 1000 мілісекунд.
+
+2.
+Number of Threads (users) - 100
+Ramp-up period (seconds) - 10
+Loop Count - 1
+
+Всі запити пройшли успішно.
+
+3.
+Number of Threads (users) - 500
+Ramp-up period (seconds) - 10
+Loop Count - 1
+
+Всі запити пройшли успішно.
+
+4.
+Number of Threads (users) - 1000
+Ramp-up period (seconds) - 10
+Loop Count - 1
+
+Один із запитів DELETE провалився за тривалістю.
+
+5.
+Number of Threads (users) - 1000
+Ramp-up period (seconds) - 5
+Loop Count - 1
+
+Один із запитів GET не проходить за тривалістю.
+
+6.
+Number of Threads (users) - 2000
+Ramp-up period (seconds) - 5
+Loop Count - 1
+ERROR
+80% запитів GET;
+24,8% POST;
+24,2% PUT;
+21,2% PATCH;
+20,63% DELETE
+
+
